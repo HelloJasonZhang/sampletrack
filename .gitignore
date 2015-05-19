@@ -1,0 +1,9 @@
+!.gitignore
+!.gitmodules
+*.log
+*~
+
+.idea
+!.jshintrc
+node_modules/
+bower_components/
