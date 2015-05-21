@@ -44,12 +44,19 @@ gulp.task('clean', function(cb) {
 
 // Initialize browser-sync which starts a static server also allows for
 // browsers to reload on filesave
-gulp.task('browser-sync', function() {
-   browserSync.init(null, {
-        server: {
-            baseDir: "./"
-        }
-    });
+gulp.task('browser-sync', function () {
+   var files = [
+      'app/**/*.html',
+      'app/assets/css/**/*.css',
+      'app/assets/imgs/**/*.png',
+      'app/assets/js/**/*.js'
+   ];
+
+   browserSync.init(files, {
+      server: {
+         baseDir: './app'
+      }
+   });
 });
 
 // Function to call for reloading browsers
@@ -67,7 +74,7 @@ gulp.task('watch', function() {
 
 // Default task
 gulp.task('default', ['clean',  'bs-reload', 'browser-sync'], function() {
-  gulp.start(['scripts', 'bs-reload']);
-  gulp.watch(['*.*','./**/*.jade','./build/scripts/*.js'], ['bs-reload']);
+  //gulp.start(['scripts', 'bs-reload']);
+  //gulp.watch(['*.*','./**/*.jade','./build/scripts/*.js'], ['bs-reload']);
 });
 
