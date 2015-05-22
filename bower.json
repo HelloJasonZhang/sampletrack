@@ -4,23 +4,7 @@
   "devDependencies": {
     "jquery": "*",
     "highlightjs": "*",
-    "parallax": "*"
-  },
-  "homepage": "index.html",
-  "authors": [
-    "Jason"
-  ],
-  "description": "demo",
-  "main": "index.html",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "keywords": [
-    "demo"
-  ]
+    "parallax": "*",
+    "bootstrap": "*"
+  }
 }

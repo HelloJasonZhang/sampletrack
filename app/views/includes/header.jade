@@ -1,0 +1,47 @@
+nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+  .container
+    .navbar-header
+      a.navbar-brand(href="/") Stracker welcome!
+    if user
+      p.navbar-text.navbar-right
+        span Welcome,#{user.name}
+        span &nbsp;|&nbsp;
+        a.navbar-link(href="/logout") Sign out
+    else
+      p.navbar-text.navbar-right
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") SignUp
+        span &nbsp;|&nbsp;
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") SignIn
+#signupModal.modal.fade
+  .modal-dialog
+    .modal-content
+      form(method="POST", action="/user/signup")
+        .modal-header SignIn
+        .modal-body
+          .form-group
+            label(for="signupName") UserName
+            input#signupName.form-control(name="user[name]", type="text")
+          .form-group
+            label(for="signupPassword") Password
+            input#signupPassword.form-control(name="user[password]", type="text")
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Close
+          button.btn.btn-success(type="submit") Submit
+#signinModal.modal.fade
+  .modal-dialog
+    .modal-content
+      form(method="POST", action="/user/signin")
+        .modal-header SignIn
+        .modal-body
+          .form-group
+            label(for="signinName") UserName
+            input#signinName.form-control(name="user[name]", type="text")
+          .form-group
+            label(for="signinPassword") Password
+            input#signinPassword.form-control(name="user[password]", type="text")
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") Close
+          button.btn.btn-success(type="submit") Submit
+br
+br
+br
